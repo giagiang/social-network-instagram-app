@@ -7,22 +7,20 @@ import MessageIcon from "@mui/icons-material/Message";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
-function Post() {
+
+function Post({ user, postImage, likes, timestamp }) {
   return (
     <div className="post">
       <div className="post__header">
         <div className="post__headerAuthor">
-          <Avatar></Avatar>
-          roses_are_rosie
-          <span></span> 
+          <Avatar>{user.charAt(0).toUpperCase()}</Avatar>
+          {user} .{""}
+          <span>{timestamp}</span>
         </div>
         <MoreHorizIcon />
       </div>
       <div className="post__image">
-        <img
-          src="https://i.pinimg.com/736x/96/af/4a/96af4a92697323ee0f16f1823e2a5f35.jpg"
-          alt=""
-        />
+        <img src={postImage} alt="" />
       </div>
       <div className="post__footer">
         <div className="post__footerIcons">
@@ -35,7 +33,7 @@ function Post() {
             <BookmarkBorderIcon className="postIcon" />
           </div>
         </div>
-        like by ha.leps and 4.897.345 others
+         like by giagiangg.le and {likes} other 
       </div>
     </div>
   );
